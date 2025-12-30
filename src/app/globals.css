@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f8f4ed;
+  --text: #1a1a1a;
+  --text-mid: #4a4a4a;
+  --text-light: #7a7a7a;
+  --border: #d4cfc4;
+  --red: #c45a5a;
+  --blue: #5a8ab4;
+  --green: #6b9a7a;
+  --purple: #8a7a9a;
+  --yellow: #c4a854;
+  --orange: #b87a4a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow-x: hidden; width: 100%; }
+
+body {
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+header { text-align: center; padding: 35px 20px 20px; }
+h1 { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 500; line-height: 1.15; margin-bottom: 6px; }
+.subtitle { color: var(--text-mid); font-size: 0.85rem; }
+
+section { padding: 25px 20px; max-width: 720px; margin: 0 auto; }
+h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 500; text-align: center; margin-bottom: 5px; }
+h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; margin: 15px 0 8px; border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+.divider { width: 35px; height: 2px; background: var(--text); margin: 0 auto 12px; }
+.intro { text-align: center; color: var(--text-mid); font-size: 0.8rem; margin-bottom: 15px; }
+.section-break { border-top: 1px solid var(--border); }
+
+/* Stats row */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 12px 0; text-align: center; }
+.stat-val { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; }
+.stat-label { font-size: 0.55rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Network grid */
+.network-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+.network-grid.three { grid-template-columns: repeat(3, 1fr); }
+.network-grid.two { grid-template-columns: repeat(2, 1fr); }
+.network-grid.six { grid-template-columns: repeat(6, 1fr); }
+.node { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.node-circle {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.4rem; font-weight: 700; color: white; text-align: center;
+  border: 2px solid white; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+.node-circle.lg { width: 44px; height: 44px; font-size: 0.45rem; }
+.node-circle.red { background: var(--red); }
+.node-circle.blue { background: var(--blue); }
+.node-circle.green { background: var(--green); }
+.node-circle.purple { background: var(--purple); }
+.node-circle.yellow { background: var(--yellow); }
+.node-circle.orange { background: var(--orange); }
+.node-circle.dark { background: var(--text); }
+.node-name { font-size: 0.55rem; font-weight: 600; text-align: center; line-height: 1.1; }
+.node-role { font-size: 0.5rem; color: var(--text-light); text-align: center; line-height: 1.1; }
+
+/* Flow rows */
+.flow-row {
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+}
+.flow-row:last-child { border-bottom: none; }
+.flow-entity { display: flex; flex-direction: column; align-items: center; gap: 2px; width: 70px; }
+.flow-circle {
+  width: 40px; height: 40px; border-radius: 50%; background: var(--text);
+  color: white; display: flex; align-items: center; justify-content: center;
+  font-size: 0.45rem; font-weight: 700; text-align: center; padding: 3px;
+}
+.flow-circle.outline { background: white; border: 2px solid var(--text); color: var(--text); }
+.flow-circle.red-bg { background: var(--red); }
+.flow-circle.blue-bg { background: var(--blue); }
+.flow-label { font-size: 0.5rem; text-align: center; line-height: 1.1; }
+.flow-person { display: flex; flex-direction: column; align-items: center; gap: 2px; width: 85px; }
+.flow-person-name { font-size: 0.6rem; font-weight: 600; text-align: center; }
+.flow-person-role { font-size: 0.5rem; color: var(--text-light); text-align: center; line-height: 1.1; }
+.dash-line { width: 18px; border-top: 2px dashed var(--border); }
+.arrow { color: var(--text-light); font-size: 0.8rem; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; font-size: 0.68rem; margin: 10px 0; }
+th { text-align: left; padding: 4px 5px; background: rgba(0,0,0,0.04); border-bottom: 2px solid var(--border); font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.04em; }
+td { padding: 4px 5px; border-bottom: 1px solid var(--border); vertical-align: top; }
+td strong { font-weight: 600; }
+
+/* Highlights */
+.highlight { background: #fff3c4; border-left: 3px solid #b89a30; padding: 8px 10px; margin: 10px 0; font-size: 0.72rem; }
+.highlight.red { background: #f5d8d8; border-color: var(--red); }
+.highlight.blue { background: #d8e8f5; border-color: var(--blue); }
+.highlight.dark { background: #e0e0e0; border-color: var(--text); }
+
+/* Timeline */
+.timeline-item { display: flex; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); }
+.t-year { font-family: 'Playfair Display', serif; font-weight: 600; color: var(--red); min-width: 40px; font-size: 0.75rem; }
+.t-content { flex: 1; }
+.t-title { font-weight: 600; font-size: 0.75rem; margin-bottom: 1px; }
+.t-desc { font-size: 0.68rem; color: var(--text-mid); }
+
+/* Case box */
+.case-box { border: 2px solid var(--border); padding: 12px; margin: 12px 0; background: white; }
+.case-header { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; border-bottom: 1px solid var(--border); padding-bottom: 5px; }
+
+footer { background: rgba(0,0,0,0.04); padding: 15px; text-align: center; font-size: 0.6rem; color: var(--text-light); }
+
+/* Tabs / Filters */
+.filter-row { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 12px 0; }
+.filter-tag { font-size: 0.6rem; padding: 3px 8px; background: rgba(0,0,0,0.05); border-radius: 10px; cursor: pointer; }
+.filter-tag:hover { background: rgba(0,0,0,0.1); }
+.filter-tag.active { background: var(--text); color: white; }
+
+/* Source reference */
+.source-ref { font-size: 0.55rem; color: var(--text-light); font-style: italic; margin-top: 5px; }
